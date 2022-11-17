@@ -8,13 +8,11 @@ type Stack struct {
 }
 
 func main() {
-	fmt.Println("Stack in GO")
 	myStack := Stack{}
 	fmt.Println(myStack)
 	myStack.Push(10)
 	myStack.Push(20)
 	myStack.Push(30)
-
 	fmt.Println(myStack)
 
 	fmt.Printf("poped Val: %v\n",myStack.Pop())
@@ -22,8 +20,6 @@ func main() {
 	fmt.Printf("poped Val: %v\n",myStack.Pop())
 	fmt.Printf("poped Val: %v\n",myStack.Pop())
 	fmt.Println(myStack)
-
-
 }
 
 // Push
@@ -39,6 +35,14 @@ func (s *Stack) Pop () int {
 	l := len(s.items)-1
 	toPop := s.items[l]
 	s.items = s.items[:l]
-
     return toPop
+}
+
+func (s *Stack) isEmpty() bool{
+	if len(s.items) ==0 {
+		return true
+	}else {
+		return false
+	}
+// Go don't have ternary operator ? :	
 }
