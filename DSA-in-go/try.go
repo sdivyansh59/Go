@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 type void struct{}
 
 func main() {
 
+	
+/*
 	set := map[int]void{}
 	var nothing void
 	set[1] = nothing
@@ -50,6 +51,6 @@ func main() {
 	})
 	fmt.Println(keyList)
 
-	 
+*/	 
 
 }
