@@ -22,6 +22,7 @@ func main() {
 		weight: 50.23, 
 		address: "gorakhpur",
 	}
+	
 	fmt.Println(p1)
 
 

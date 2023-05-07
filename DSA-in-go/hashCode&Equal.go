@@ -28,8 +28,8 @@ func main() {
 	m[obj1] = true
 	m[obj2] = true
 	m[obj3] = false
-	fmt.Printf("%v %p",obj1, &obj1)
-	fmt.Printf("%v %p",obj3, &obj3)
+	// fmt.Printf("%v %p",obj1, &obj1)
+	// fmt.Printf("%v %p",obj3, &obj3)
 	fmt.Println(m)
 
 }

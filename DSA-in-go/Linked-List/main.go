@@ -1,62 +1,57 @@
 package main
 
-import "fmt"
-
-type node struct {
-	data int
-	next *node
-}
-
-type linkedList struct {
-	head *node
-	size int
-}
+import (
+	// "fmt"
+	"mylinkedlist/linkedlist"
+)
 
 func main() {
-	fmt.Println("LLinked list")
+	// fmt.Println("Linked list")
 
-	mylist := linkedList{}
+	list := linkedlist.LinkedList{}
+	list.Insert(1)
+	list.Insert(2)
+	list.Insert(3)
+	list.PrintList()
+	list.Delete(1)
+	list.PrintList()
 
-	// Doubt what node1 will store if I will not  mention &
-	// ex: node1 := node{data: 48}
-	node1 := &node{data: 48}
-	node2 := &node{data: 18}
-	node3 := &node{data: 16}
+	list2 := linkedlist.LinkedList{}
+	list2.Insert("Apple")
+	list2.Insert("Banana")
+	list2.Insert("Orange")
+	list2.PrintList()
+	list2.Delete("Orange")
+	list2.PrintList()
 
-	mylist.addLast(node1)
-	mylist.addFront(node2)
-	mylist.addLast(node3)
+	// list3 := linkedlist.LinkedList{}
+	// list3.Insert(Student{
+	// 	name: "Divyansh",
+	// 	id: 1,
+	// 	active: true,
+	// })
 
-	fmt.Println(mylist)
+	// list3.Insert(Student{
+	// 	name: "Ankit",
+	// 	id: 2,
+	// 	active: true,
+	// })
 
+	// list3.Insert(Student{
+	// 	name: "Priyanka",
+	// 	id: 3,
+	// 	active: false,
+	// })
 
-
+	// list3.PrintList()
+	
 }
 
-
-
-func (l *linkedList) addLast (n *node) {
-
-	temp := l.head
-	if temp == nil {
-		temp = n
-		l.size++
-		return
-	}
-
-	for temp.next != nil {
-		temp = temp.next
-	}
-	temp.next = n
-	l.size++
-
-}
-
-
-func (l *linkedList) addFront (n *node) {
-	temp := l.head
-	l.head = n
-	l.head.next = temp
-
-	l.size++
-}
+// type Student struct {
+// 	name string
+// 	id int
+// 	active bool
+// }
+// func (s *Student) String () string{
+// 	return fmt.Sprintf("%v %v %v ",s.id,s.name, s.active)
+// }

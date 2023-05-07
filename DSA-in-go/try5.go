@@ -1,60 +1,30 @@
 package main
 
-import "fmt"
+type listNode struct {
+	value int
+	next  *listNode
+}
 
-func seats(A string) int {
-	var count int
-	c1, c2 := 0, 0
+func findMid(start , end *listNode) *listNode{
+	var slow, fast *listNode = start, start
 
-	i, j := 0, len(A)-1
-
-	for A[i] == '.' {
-		i++
-	}
-	for A[j] == '.' {
-		j--
+	for (fast != nil && fast != end) && (fast.next != nil && fast.next != end) {
+		slow = slow.next
+		fast = slow.next
 	}
 
-	fmt.Println(i,j)
+	return slow
+}
 
-	for i < j {
-		// handle i
-		if c1 <c2 {
-			if A[i] == '.' {
-			count += c1 
-		} else {
-			c1++
-		}
-		i++
+func merge (head1 , end1, head2, end2 *listNode){
+	var Head , head *listNode
+	var temp1, temp2 *listNode = head1, head2
+	
+	for temp1 != 
+
+}
 
 
-		}else{
-			// handle j
-		if A[j] == '.' {
-			count += c2
-		} else {
-			c2++
-
-		}
-
-		j--
-		}
-		
-
-		
-
-		// if c1 <c2 {
-		// 	i++
-		// }else{
-		// 	j--
-		// }
-		// i++
-		// j--
-
-	}
-
-	fmt.Println(count)
-
-	return count
+func sortList(A *listNode) *listNode {
 
 }
